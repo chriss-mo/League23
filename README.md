@@ -1,5 +1,5 @@
 # League of Legends Snowball Effect
-Data science and analysis project for DSC 80 at UCSD  
+Our data science and analysis project for DSC 80 at UCSD  
 
 ## Introduction  
 In League of Legends, the primary objective is to destroy the Nexus, which is the only win condition. However, for a team to reach their opponent's Nexus, they must first destroy and get past their opponent's turrets, or towers. Each team has eleven towers on each side, which are spread out along the three lanes. Not all towers need to be destroyed to reach the nexus, just all in one lane. Towers are also an indicator of how successful a team is in a certain match.  
