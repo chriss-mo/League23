@@ -18,19 +18,19 @@ The dataset we used was provided by [Oracle's Elixir](https://oracleselixir.com/
 * `firsttothreetowers` is a boolean value denoting whether or not the team in question beat their opponent to destroy 3 of the 11 towers.
 
 ## Data Cleaning and Exploratory Data Analysis  
-
+*coming soon*  
 
 ## Assessment of Missingness  
-
+*coming soon*  
 
 ## Hypothesis Testing  
-
+*coming soon*  
 
 ## Framing a Prediction Problem  
-
+*coming soon*  
 
 ## Baseline Model  
-
+*coming soon*  
 
 ## Final Model  
 *coming soon*
