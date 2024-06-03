@@ -22,7 +22,7 @@ The dataset we used was provided by [Oracle's Elixir](https://oracleselixir.com/
 
 ## Assessment of Missingness  
 *coming soon*  
-
+The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.
 ## Hypothesis Testing  
 *coming soon*  
 
