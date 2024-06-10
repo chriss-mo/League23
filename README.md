@@ -24,7 +24,11 @@ For our univariate analysis, we decided to plot the distribution of `minionkills
 ![image](https://github.com/chriss-mo/League23/assets/156863651/c62e08ad-a4d2-4ea5-9e59-82509de6d8ec)  
 For our bivariate analysis, we wanted to observe the relationship between being the first to getting three towers and winning the game, and we visualized this using a pie chart:  
 ![image](https://github.com/chriss-mo/League23/assets/156863651/c3b74e95-7264-440e-b1c0-f571b97e482a)  
-One interesting aggregation we found was by grouping the dataframe by `firsttothreetowers` and taking the mean of the resulting dataframe. Some interesting statistics from this aggregation are the win rate at 79% for teams that were the first to three towers, and the first mid tower taken was 82% for teams that were the first to take three towers. 
+One interesting aggregation we found was by grouping the dataframe by `firsttothreetowers` and taking the mean of the resulting dataframe. Some interesting statistics from this aggregation are the win rate at 79% for teams that were the first to three towers, and the first mid tower taken was 82% for teams that were the first to take three towers. The table is shown here:  
+|   firsttothreetowers |   result |   firstmidtower |   totalgold |   heralds |   hextechs |   team kpm |   minionkills |   firsttower |   inhibitors |   pentakills |   playoffs |   kills |   monsterkills |     dpm |
+|---------------------:|---------:|----------------:|------------:|----------:|-----------:|-----------:|--------------:|-------------:|-------------:|-------------:|-----------:|--------:|---------------:|--------:|
+|                    0 | 0.209221 |        0.177204 |     53246   |  0.641708 |   0.244336 |   0.334783 |       805.233 |     0.224739 |     0.373131 |   0.00634345 |   0.231763 | 10.7876 |        166.91  | 2076.79 |
+|                    1 | 0.790732 |        0.822796 |     60448.9 |  1.34285  |   0.450487 |   0.588414 |       823.284 |     0.77521  |     1.51462  |   0.0175617  |   0.231815 | 17.7854 |        191.392 | 2466.15 | 
 
 ## Assessment of Missingness  
 The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
