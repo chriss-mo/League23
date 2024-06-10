@@ -33,7 +33,11 @@ One interesting aggregation we found was by grouping the dataframe by `firsttoth
 
 ## Assessment of Missingness  
 The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
-
+We decided to try and see if the missingness of the `split` column depended on the `league` in our dataset, since each league has multiple splits, and certain leagues may not have any splits. We performed a permutation test on the following:  
+*Null hypothesis:* The distribution of `league` when `split` is missing is the same as distribution of `league` when `split` is not missing.  
+*Alternative hypothesis:* The distribution of `league` when `split` is missing is **not** the same as distribution of `league` when `split` is not missing.  
+The results of this permutation test yielded a p-value of 0.0, which means we can reject the null hypothesis at the standard 5% significance level. The visualization is shown here:  
+![image](https://github.com/chriss-mo/League23/assets/156863651/9692c6e9-fcdf-48a1-869a-fa853d4a48cc)  
 
 ## Hypothesis Testing  
 For our permutation test, we want to create an experiment with the following:
@@ -44,7 +48,7 @@ To do this experiment, we shuffled the `result` column and used the difference o
 
 ## Framing a Prediction Problem  
 Our prediction model aims to answer the question: **How likely can a team get the first to three towers?** In other words, given the statistics that are an indicator of team strength, can we predict whether or not a team will be able to beat their opponent to destroy three towers?  
-This problem is a binary classification problem, as we are trying to predict the binary column `firsttothreetowers`. For our test statistic, we would want to use precision, as we can handle more false negatives by doing further analysis on different features. 
+This problem is a binary classification problem, as we are trying to predict the binary column `firsttothreetowers`. For our test statistic, we will use accuracy, as we want to reduce false positives, and can easily do further analysis on false negatives.  
 
 ## Baseline Model  
 *coming soon*  
