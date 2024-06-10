@@ -53,10 +53,11 @@ To do this experiment, we shuffled the `result` column and used the difference o
 
 ## Framing a Prediction Problem  
 Our prediction model aims to answer the question: **How likely can a team get the first to three towers?** In other words, given the statistics that are an indicator of team strength, can we predict whether or not a team will be able to beat their opponent to destroy three towers?  
-This problem is a binary classification problem, as we are trying to predict the binary column `firsttothreetowers`. For our test statistic, we will use accuracy, as we want to reduce false positives, and can easily do further analysis on false negatives.  
+This problem is a binary classification problem, as we are trying to predict the binary column `firsttothreetowers`. For our test statistic, we will use accuracy, as we want to reduce false positives, and can easily do further analysis on false negatives. We want to use `kills`, `minionkills`, `monsterkills`, and `dpm` as our features, since they are indicators of team strength and we hypothesize that stronger teams will be the first to get three towers in a game.  
 
 ## Baseline Model  
-*coming soon*  
+Our baseline model consisted of the X_train and X_test having `kills`, `minionkills`, `monsterkills`, and `dpm` as columns, and our y_train and y_test simply being the `firsttothreetowers` column. All of the features we used are quantitative, so encoding was not necessary for our base model. We used a Random Forest Classifier because we believed that the model would avoid fitting better than a standard decision tree.  
+The base model achieved an accuracy of 0.74, which we believe is quite good, but can be improved on.  
 
 ## Final Model  
 *coming soon*
