@@ -33,11 +33,16 @@ One interesting aggregation we found was by grouping the dataframe by `firsttoth
 
 ## Assessment of Missingness  
 The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
-We decided to try and see if the missingness of the `split` column depended on the `league` in our dataset, since each league has multiple splits, and certain leagues may not have any splits. We performed a permutation test on the following:  
+We decided to try and see if the missingness of the `split` column depended on the `league` column in our dataset, since each league has multiple splits, and certain leagues may not have any splits. We performed a permutation test with the total variation distance as the test statistic on the following:  
 *Null hypothesis:* The distribution of `league` when `split` is missing is the same as distribution of `league` when `split` is not missing.  
 *Alternative hypothesis:* The distribution of `league` when `split` is missing is **not** the same as distribution of `league` when `split` is not missing.  
 The results of this permutation test yielded a p-value of 0.0, which means we can reject the null hypothesis at the standard 5% significance level. The visualization is shown here:  
 ![image](https://github.com/chriss-mo/League23/assets/156863651/9692c6e9-fcdf-48a1-869a-fa853d4a48cc)  
+We tried to see if the missingness of `split` depended on the `teamid` in our dataset by performing a permutation test with the total variation distance as the test statistic on the following:  
+*Null hypothesis:* The distribution of `teamid` when `split` is missing is the **not** same as distribution of `teamid` when `split` is not missing.  
+*Alternative hypothesis:* The distribution of `teamid` when `split` is missing is the same as distribution of `teamid` when `split` is not missing.  
+The results of this permutation test yielded a p-value of 0.0, which means we can reject the null hypothesis at the standard 5% significance level. The visualization is shown here:  
+
 
 ## Hypothesis Testing  
 For our permutation test, we want to create an experiment with the following:
