@@ -28,13 +28,19 @@ One interesting aggregation we found was by grouping the dataframe by `firsttoth
 |   firsttothreetowers |   result |   firstmidtower |   totalgold |   heralds |   hextechs |   team kpm |   minionkills |   firsttower |   inhibitors |   pentakills |   playoffs |   kills |   monsterkills |     dpm |
 |---------------------:|---------:|----------------:|------------:|----------:|-----------:|-----------:|--------------:|-------------:|-------------:|-------------:|-----------:|--------:|---------------:|--------:|
 |                    0 | 0.209221 |        0.177204 |     53246   |  0.641708 |   0.244336 |   0.334783 |       805.233 |     0.224739 |     0.373131 |   0.00634345 |   0.231763 | 10.7876 |        166.91  | 2076.79 |
-|                    1 | 0.790732 |        0.822796 |     60448.9 |  1.34285  |   0.450487 |   0.588414 |       823.284 |     0.77521  |     1.51462  |   0.0175617  |   0.231815 | 17.7854 |        191.392 | 2466.15 | 
+|                    1 | 0.790732 |        0.822796 |     60448.9 |  1.34285  |   0.450487 |   0.588414 |       823.284 |     0.77521  |     1.51462  |   0.0175617  |   0.231815 | 17.7854 |        191.392 | 2466.15 |  
+
 
 ## Assessment of Missingness  
 The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
 
+
 ## Hypothesis Testing  
-*coming soon*  
+For our permutation test, we want to create an experiment with the following:
+*Null hypothesis:* The `result` for teams with `firsttothreetowers` and the teams without `firsttothreetowers` are drawn from the same distribution.
+*Alternate hypothesis:* The `result` for teams with `firsttothreetowers` and the teams without `firsttothreetowers` are **not** drawn from the same distribution.
+To do this experiment, we shuffled the `result` column and used the difference of means as the test statistic. We found the the p-value of our observed statistic to be 0.0, which means we can reject the null hypothesis that the `result` for teams with `firsttothreetowers` and the teams without `firsttothreetowers` are drawn from the same distribution. The visualization of the test statistics and observed value is shown below:  
+![image](https://github.com/chriss-mo/League23/assets/156863651/54a00797-c858-455f-8564-a387208c89cd)  
 
 ## Framing a Prediction Problem  
 *coming soon*  
