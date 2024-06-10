@@ -7,6 +7,7 @@ In League of Legends, the primary objective is to destroy the Nexus, which is th
 The dataset we used was provided by [Oracle's Elixir](https://oracleselixir.com/tools/downloads), and we focused on the 2023 season statistics, as it was the most recent complete dataset. The dataset has 125,904 rows and 131 columns. Each row represents a player's performance in a given match, and there are 5 players in a team. Additionally, there is one row after all players in the team denoting the team's overall performance, and can be easily identified by `NaN`  values for the player's name. Within the dataset, the columns we are interested in using are `teamname`, `result`, `minoinkills`, `monsterkills`, `wardskilled`, `total cs`, `firsttower`,  `firstmidtower`, `firstherald`, and `firsttothreetowers`.  
 
 * `teamname` is simply the name of the team that we are observing. We will not be using this in our calcualtion, but rather as an index to keep track of the teams.
+* `datacompleteness` is a column whose values are 'complete' and 'partial'. In our data cleaning and exploration section, we will be discussing why we chose to use 'complete' data.
 * `result` is a boolean value denoting whether the team in question won the match or not.
 * `minionkills` is the total amount of minions that a team killed in a match.
 * `monsterkills` is the total number of monsters a team killed in a match.
@@ -18,11 +19,15 @@ The dataset we used was provided by [Oracle's Elixir](https://oracleselixir.com/
 * `firsttothreetowers` is a boolean value denoting whether or not the team in question beat their opponent to destroy 3 of the 11 towers.
 
 ## Data Cleaning and Exploratory Data Analysis  
-*coming soon*  
+For our dataset, we didn't want to spend too much time imputing large amounts of data, so we wanted to only look at games whose `datacompleteness` is 'complete'. This still gives us many observations to analyze, and allows us to keep moving in our project. We also wanted to look at the overall performance of team instead of a player-by-player analysis, so we filtered it further to only look at the summary rows for each team in a game.  
+For our univariate analysis, we decided to plot the distribution of `minionkills` as a histogram, and we saw that it was roughly normal:  
+![image](https://github.com/chriss-mo/League23/assets/156863651/c62e08ad-a4d2-4ea5-9e59-82509de6d8ec)  
+For our bivariate analysis, we wanted to observe the relationship between being the first to getting three towers and winning the game, and we visualized this using a pie chart:  
+![image](https://github.com/chriss-mo/League23/assets/156863651/c3b74e95-7264-440e-b1c0-f571b97e482a)  
 
 ## Assessment of Missingness  
-*coming soon*  
-The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.
+The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
+
 ## Hypothesis Testing  
 *coming soon*  
 
