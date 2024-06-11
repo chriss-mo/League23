@@ -8,7 +8,7 @@ The dataset we used was provided by [Oracle's Elixir](https://oracleselixir.com/
 
 * `gameid` is a column that contains the id for every game played
 * `league` stores the name of the league it was played in but also includes major tournaments that are not a part of the regular season
-* `totalgold` is the tottal gold for each team
+* `totalgold` is the total gold for each team
 * `kills` stores the number of kills for each team
 * `dpm` stores the damage per minute for each team
 * `datacompleteness` is a column whose values are 'complete' and 'partial'. In our data cleaning and exploration section, we will be discussing why we chose to use 'complete' data.
