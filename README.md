@@ -64,4 +64,7 @@ We decided to use a Random Forest model instead of a decision tree in our base m
 ![image](https://github.com/chriss-mo/League23/assets/156863651/d2cea824-2c67-4996-9758-ef4444b75e6a)  
 
 ## Fairness Analysis  
-*coming soon*
+For our fairness analysis, we wanted to see if our trained model performed better for teams with more kills. We set the threshold at 25 kills, and performed a permutation test on the following:  
+*Null hypothesis:* Our model is fair. Its accuracy for teams with less than 25 kills and teams with 25 kills or more are roughly the same, and any differences are due to random chance.  
+*Alternate hypothesis:* Our model is unfair. Its accuracy for teams with less than 25 total kills is lower than its precision for teams with 25 kills or more. Our p-value for this pemutation test was 0.31, which means we fail to reject the null hypothesis at the standard 5% significance level, and we can say that our model is not unfair based on the number of kills a team has. The visualization of our test results is shown below:  
+![image](https://github.com/chriss-mo/League23/assets/156863651/ffdd982e-f36c-4324-839c-071faa7c0e0e)
