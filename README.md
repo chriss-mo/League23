@@ -27,11 +27,80 @@ For our univariate analysis, we decided to plot the distribution of `minionkills
 For our bivariate analysis, we wanted to observe the relationship between being the first to getting three towers and winning the game, and we visualized this using a pie chart:  
 ![image](https://github.com/chriss-mo/League23/assets/156863651/c3b74e95-7264-440e-b1c0-f571b97e482a)  
 One interesting aggregation we found was by grouping the dataframe by `firsttothreetowers` and taking the mean of the resulting dataframe. Some interesting statistics from this aggregation are the win rate at 79% for teams that were the first to three towers, and the first mid tower taken was 82% for teams that were the first to take three towers. The table is shown here:  
-|   firsttothreetowers |   result |   firstmidtower |   totalgold |   heralds |   hextechs |   team kpm |   minionkills |   firsttower |   inhibitors |   pentakills |   playoffs |   kills |   monsterkills |     dpm |
-|---------------------:|---------:|----------------:|------------:|----------:|-----------:|-----------:|--------------:|-------------:|-------------:|-------------:|-----------:|--------:|---------------:|--------:|
-|                    0 | 0.209221 |        0.177204 |     53246   |  0.641708 |   0.244336 |   0.334783 |       805.233 |     0.224739 |     0.373131 |   0.00634345 |   0.231763 | 10.7876 |        166.91  | 2076.79 |
-|                    1 | 0.790732 |        0.822796 |     60448.9 |  1.34285  |   0.450487 |   0.588414 |       823.284 |     0.77521  |     1.51462  |   0.0175617  |   0.231815 | 17.7854 |        191.392 | 2466.15 |  
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>result</th>
+      <th>firstmidtower</th>
+      <th>totalgold</th>
+      <th>heralds</th>
+      <th>hextechs</th>
+      <th>team kpm</th>
+      <th>minionkills</th>
+      <th>firsttower</th>
+      <th>inhibitors</th>
+      <th>pentakills</th>
+      <th>playoffs</th>
+      <th>kills</th>
+      <th>monsterkills</th>
+      <th>dpm</th>
+    </tr>
+    <tr>
+      <th>firsttothreetowers</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>0.209221</td>
+      <td>0.177204</td>
+      <td>53245.981423</td>
+      <td>0.641708</td>
+      <td>0.244336</td>
+      <td>0.334783</td>
+      <td>805.232556</td>
+      <td>0.224739</td>
+      <td>0.373131</td>
+      <td>0.006343</td>
+      <td>0.231763</td>
+      <td>10.787608</td>
+      <td>166.909946</td>
+      <td>2076.788635</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>0.790732</td>
+      <td>0.822796</td>
+      <td>60448.867777</td>
+      <td>1.342851</td>
+      <td>0.450487</td>
+      <td>0.588414</td>
+      <td>823.283594</td>
+      <td>0.775210</td>
+      <td>1.514616</td>
+      <td>0.017562</td>
+      <td>0.231815</td>
+      <td>17.785407</td>
+      <td>191.391910</td>
+      <td>2466.149385</td>
+    </tr>
+  </tbody>
+</table>  
 
 ## Assessment of Missingness  
 The `Heralds` column in the dataset is NMAR. When looking into the data it has not dependency on other columns. It only depends on it's own column where if no heralds were taken then the value in the `Heralds` column is NaN. To find more about the data a column could be added called `Herald_Taken` which is true if a herald was taken and false it no herald was taken. This could be used to find a dependency in the missingness.  
